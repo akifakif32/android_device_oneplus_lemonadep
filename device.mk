@@ -90,6 +90,10 @@ PRODUCT_PACKAGES += \
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
+    
+# Custom Refresh Rate 
+$(call soong_config_set,surfaceflinger,frame_rate_category_high,120)
+$(call soong_config_set,surfaceflinger,frame_rate_category_min,60)
 
 # Convert double-tap-to-wake into an AOD pulse instead of a full wake.
 # config_supportDoubleTapWake is already true for this device (see
