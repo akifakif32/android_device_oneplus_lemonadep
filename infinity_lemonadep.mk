@@ -12,10 +12,17 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from lemonadep device
 $(call inherit-product, device/oneplus/lemonadep/device.mk)
 
-# Inherit some common Lineage stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+# Inherit some common Infinity-X stuff.
+$(call inherit-product, vendor/infinity/config/common_full_phone.mk)
 
-PRODUCT_NAME := lineage_lemonadep
+# Infinity-X Specific Flags
+INFINITY_BUILD_TYPE := OFFICIAL
+INFINITY_MAINTAINER := "akif"
+WITH_GAPPS := true
+TARGET_SUPPORTS_BLUR := true
+TARGET_HAS_UDFPS := true
+
+PRODUCT_NAME := infinity_lemonadep
 PRODUCT_DEVICE := lemonadep
 PRODUCT_MANUFACTURER := OnePlus
 PRODUCT_BRAND := OnePlus
