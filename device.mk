@@ -86,6 +86,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
 
+# Convert double-tap-to-wake into an AOD pulse instead of a full wake.
+# config_supportDoubleTapWake is already true for this device (see
+# device/oneplus/sm8350-common's OPlusFrameworksResCommon overlay).
+TARGET_DOZE_DOUBLE_TAP_PULSE_SUPPORTED := true
+
 # Inherit from the common OEM chipset makefile.
 $(call inherit-product, device/oneplus/sm8350-common/common.mk)
 
